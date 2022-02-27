@@ -1,0 +1,689 @@
+@font-face {
+  font-family: "Styrene A Web";
+  src: url("./../fonts/StyreneAWeb/StyreneAWeb-Regular.eot");
+  src: local("Styrene A Web Regular"), local("StyreneAWeb-Regular"), url("./../fonts/StyreneAWeb/StyreneAWeb-Regular.eot?#iefix") format("embedded-opentype"), url("./../fonts/StyreneAWeb/StyreneAWeb-Regular.woff2") format("woff2"), url("./../fonts/StyreneAWeb/StyreneAWeb-Regular.woff") format("woff"), url("./../fonts/StyreneAWeb/StyreneAWeb-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Styrene A Web";
+  src: url("./../fonts/StyreneAWeb/StyreneAWeb-Light.eot");
+  src: local("Styrene A Web Light"), local("StyreneAWeb-Light"), url("./../fonts/StyreneAWeb/StyreneAWeb-Light.eot?#iefix") format("embedded-opentype"), url("./../fonts/StyreneAWeb/StyreneAWeb-Light.woff2") format("woff2"), url("./../fonts/StyreneAWeb/StyreneAWeb-Light.woff") format("woff"), url("./../fonts/StyreneAWeb/StyreneAWeb-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("./../fonts/Montserrat/Montserrat-SemiBold.eot");
+  src: url("./../fonts/Montserrat/Montserrat-SemiBold.eot?#iefix") format("embedded-opentype"), url("./../fonts/Montserrat/Montserrat-SemiBold.woff2") format("woff2"), url("./../fonts/Montserrat/Montserrat-SemiBold.woff") format("woff"), url("./../fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("./../fonts/Montserrat/Montserrat-Regular.eot");
+  src: url("./../fonts/Montserrat/Montserrat-Regular.eot?#iefix") format("embedded-opentype"), url("./../fonts/Montserrat/Montserrat-Regular.woff2") format("woff2"), url("./../fonts/Montserrat/Montserrat-Regular.woff") format("woff"), url("./../fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("./../fonts/Montserrat/Montserrat-Bold.eot");
+  src: url("./../fonts/Montserrat/Montserrat-Bold.eot?#iefix") format("embedded-opentype"), url("./../fonts/Montserrat/Montserrat-Bold.woff2") format("woff2"), url("./../fonts/Montserrat/Montserrat-Bold.woff") format("woff"), url("./../fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("./../fonts/Montserrat/Montserrat-Medium.eot");
+  src: url("./../fonts/Montserrat/Montserrat-Medium.eot?#iefix") format("embedded-opentype"), url("./../fonts/Montserrat/Montserrat-Medium.woff2") format("woff2"), url("./../fonts/Montserrat/Montserrat-Medium.woff") format("woff"), url("./../fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  display: block;
+}
+
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+a {
+  background-color: transparent;
+}
+
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+img {
+  border-style: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+*, :after, :before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  min-width: 320px;
+}
+
+body {
+  min-height: 100%;
+  font-family: "Styrene A Web", sans-serif;
+  min-width: 320px;
+}
+
+.container {
+  position: relative;
+  max-width: 1230px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+}
+
+@media (max-width: 1230px) {
+  .container {
+    max-width: 1022px;
+  }
+}
+@media (max-width: 1022px) {
+  .container {
+    max-width: 798px;
+  }
+}
+@media (max-width: 798px) {
+  .container {
+    max-width: 606px;
+  }
+}
+@media (max-width: 606px) {
+  .container {
+    max-width: 405px;
+  }
+}
+.logo {
+  width: 200px;
+}
+.logo img {
+  width: 100%;
+}
+
+.header {
+  background: #181818;
+  padding: 20px 0;
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+}
+.header__logo {
+  flex: 0 0 15%;
+}
+.header-nav {
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
+}
+.header-nav__list {
+  display: flex;
+}
+.header-nav__list li:not(:last-of-type) {
+  margin-right: 35px;
+}
+.header__link {
+  font-family: Montserrat, sans-serif;
+  color: #fff;
+}
+.header-contacts {
+  display: flex;
+  align-items: center;
+  flex: 0 0 20%;
+  justify-content: space-between;
+}
+.header-social__link {
+  width: 30px;
+  height: 30px;
+}
+.header-social__link:first-of-type {
+  margin-right: 15px;
+}
+.header-social__link svg {
+  width: 30px;
+  height: 30px;
+}
+.header__cart {
+  width: 30px;
+  margin-left: auto;
+}
+.header__cart svg {
+  width: 30px;
+  height: 30px;
+}
+
+.constructor {
+  padding: 70px 0;
+  background: #000;
+  color: #fff;
+}
+.constructor__title {
+  font-size: 33px;
+  margin-bottom: 35px;
+}
+.constructor__subtitle {
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+.constructor-set {
+  margin-bottom: 40px;
+}
+.constructor-set__choice {
+  display: flex;
+  margin-bottom: 25px;
+}
+.constructor-set__choice input {
+  display: none;
+}
+.constructor-set__choice label {
+  border-radius: 13px;
+  height: 130px;
+  width: 100px;
+  cursor: pointer;
+}
+.constructor-set__choice label:not(:last-of-type) {
+  margin-right: 35px;
+}
+.constructor-set__choice label img {
+  width: 100%;
+  height: 100%;
+}
+.constructor-set__choice #choice-1:checked ~ label[for=choice-1] {
+  border: 2px solid red;
+}
+.constructor-set__choice #choice-2:checked ~ label[for=choice-2] {
+  border: 2px solid red;
+}
+.constructor-set__choice #choice-3:checked ~ label[for=choice-3] {
+  border: 2px solid red;
+}
+.constructor-set__choice #choice-4:checked ~ label[for=choice-4] {
+  border: 2px solid red;
+}
+.constructor-set__add {
+  display: flex;
+  flex-direction: column;
+}
+.constructor-set__add input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.constructor-set__add input + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+.constructor-set__add input + label::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #fff;
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+.constructor-set__add input:checked + label::after {
+  background-image: url("./../img/icons/checkbox.svg");
+}
+.constructor-set__one {
+  margin-bottom: 25px;
+}
+.constructor-set__one input + label:after {
+  margin-left: 50px;
+}
+.constructor-set__two input + label:after {
+  margin-left: 76px;
+}
+.constructor-filler__choice {
+  margin-bottom: 25px;
+  display: flex;
+}
+.constructor-filler__choice input {
+  display: none;
+}
+.constructor-filler__choice input:checked + label {
+  border: 1px solid red;
+  color: red;
+}
+.constructor-filler__choice label {
+  padding: 10px 30px;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.constructor-filler__choice label:first-of-type {
+  margin-right: 35px;
+}
+.constructor-filler__product {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.constructor-filler__img {
+  width: 45%;
+  height: 500px;
+  border-radius: 15px;
+}
+.constructor-filler__img img {
+  border-radius: 15px;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.constructor-filler-view {
+  padding: 35px;
+  background: #212121;
+  border-radius: 20px;
+  width: 40%;
+}
+.constructor-filler-view__title {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+.constructor-filler-view__patterns {
+  display: flex;
+  margin-bottom: 25px;
+}
+.constructor-filler-view__patterns input {
+  display: none;
+}
+.constructor-filler-view__patterns input:checked + label {
+  border: 2px solid red;
+}
+.constructor-filler-view__patterns label {
+  cursor: pointer;
+  display: block;
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+}
+.constructor-filler-view__patterns label:not(:last-of-type) {
+  margin-right: 15px;
+}
+.constructor-filler-view__patterns label img {
+  width: 100%;
+  height: 100%;
+}
+.constructor-filler-view__skin {
+  display: flex;
+  margin-bottom: 25px;
+}
+.constructor-filler-view__skin input {
+  display: none;
+}
+.constructor-filler-view__skin input:checked + label {
+  border: 2px solid red;
+}
+.constructor-filler-view__skin label {
+  cursor: pointer;
+  display: block;
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+}
+.constructor-filler-view__skin label:not(:last-of-type) {
+  margin-right: 15px;
+}
+.constructor-filler-view__fillers {
+  display: flex;
+  margin-bottom: 25px;
+}
+.constructor-filler-view__fillers input {
+  display: none;
+}
+.constructor-filler-view__fillers input:checked + label {
+  border: 2px solid red;
+}
+.constructor-filler-view__fillers label {
+  cursor: pointer;
+  display: block;
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+}
+.constructor-filler-view__fillers label:not(:last-of-type) {
+  margin-right: 15px;
+}
+.constructor-filler-view__edging {
+  display: flex;
+}
+.constructor-filler-view__edging input {
+  display: none;
+}
+.constructor-filler-view__edging input:checked + label {
+  border: 2px solid red;
+}
+.constructor-filler-view__edging label {
+  cursor: pointer;
+  display: block;
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+}
+.constructor-filler-view__edging label:not(:last-of-type) {
+  margin-right: 15px;
+}
+.constructor-filler-view__black {
+  background: #3F3E3E;
+}
+.constructor-filler-view__sand {
+  background: #D0CFA9;
+}
+.constructor-filler-view__gray {
+  background: #DCDCDC;
+}
+.constructor-filler-view__blue {
+  background: #5666D1;
+}
+.constructor-filler-view__red {
+  background: #B93B58;
+}
+.constructor-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.constructor-footer__checkbox {
+  display: flex;
+  flex-direction: column;
+}
+.constructor-footer__checkbox label {
+  font-weight: 300;
+  font-size: 24px;
+}
+.constructor-footer__checkbox input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.constructor-footer__checkbox input + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+.constructor-footer__checkbox input + label::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #fff;
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  margin-left: 20px;
+}
+.constructor-footer__checkbox input:checked + label::after {
+  background-image: url("./../img/icons/checkbox.svg");
+}
+.constructor-footer__checkbox label[for=for-foot] {
+  margin-bottom: 15px;
+}
+.constructor-footer__price {
+  width: 40%;
+}
+.constructor-footer__price input {
+  background: #212121;
+  padding: 15px;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 25px;
+  max-width: 80%;
+  width: 100%;
+  margin-bottom: 25px;
+}
+.constructor-footer__price input::placeholder {
+  color: #fff;
+  font-family: "Styrene A Web", sans-serif;
+}
+.constructor-footer__buy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.constructor-footer__sum {
+  font-size: 24px;
+}
+.constructor-footer__button {
+  background: #CD1829;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  max-width: 40%;
+  width: 100%;
+  font-family: Montserrat, sans-serif;
+}
+
+/*# sourceMappingURL=style.css.map */
