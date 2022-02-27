@@ -344,6 +344,10 @@ ul {
 .header__link {
   font-family: Montserrat, sans-serif;
   color: #fff;
+  transition: all 0.3s;
+}
+.header__link:hover {
+  color: red;
 }
 .header-contacts {
   display: flex;
