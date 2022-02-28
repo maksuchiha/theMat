@@ -5,6 +5,8 @@ const constructorOther = document.querySelector('.constructor-set__add')
 const footerCheckbox = document.querySelector('.constructor-footer__checkbox')
 const outputSum = document.querySelector('.constructor-footer__sum > span')
 const fillerChoice = document.querySelector('.constructor-filler__choice')
+const fillerColor = document.querySelector('.constructor-filler-view__fillers')
+const fillerColorEva = document.querySelector('.constructor-filler-view__fillers_eva')
 
 
 const appData = {
@@ -63,6 +65,13 @@ const appData = {
             if (e.target.closest('input')) {
                 if (e.target.checked) {
                     appData.addFillerPrice()
+                }
+                if (e.target.getAttribute('id') === 'eva') {
+                    fillerColor.style.display = 'none'
+                    fillerColorEva.style.display = 'flex'
+                } else {
+                    fillerColor.style.display = 'flex'
+                    fillerColorEva.style.display = 'none'
                 }
             }
             appData.getFullPrice()

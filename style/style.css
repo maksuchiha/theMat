@@ -563,6 +563,9 @@ ul {
   display: flex;
   margin-bottom: 25px;
 }
+.constructor-filler-view__fillers_eva {
+  display: none;
+}
 .constructor-filler-view__fillers input {
   display: none;
 }
@@ -610,6 +613,7 @@ ul {
   color: #fff;
   cursor: pointer;
   font-weight: 300;
+  padding-right: 5px;
 }
 .constructor-filler-view__filler select:first-of-type {
   margin-bottom: 10px;
@@ -631,6 +635,9 @@ ul {
 }
 .constructor-filler-view__brown {
   background: #523C3F;
+}
+.constructor-filler-view__orange {
+  background: #ff7f00;
 }
 .constructor-footer {
   display: flex;
