@@ -7,6 +7,7 @@ const outputSum = document.querySelector('.constructor-footer__sum > span')
 const fillerChoice = document.querySelector('.constructor-filler__choice')
 const fillerColor = document.querySelector('.constructor-filler-view__fillers')
 const fillerColorEva = document.querySelector('.constructor-filler-view__fillers_eva')
+const patterns = document.querySelector('.constructor-filler-view__patterns')
 
 
 const appData = {
@@ -30,6 +31,106 @@ const appData = {
                 }
             }
         })
+    },
+    cleanFillerSkinColor: () => {
+        document.querySelectorAll('.constructor-filler-view__skin').forEach(item => {
+            item.style.display = ''
+        })
+
+    },
+    setColorStr: (getId) => {
+        if (getId.getAttribute('id') === 'skin-color-selector-romb-1') {
+            getId.addEventListener('change', (e) => {
+                if (e.target.value === '1') {
+                    appData.cleanFillerSkinColor()
+                    document.querySelector('.constructor-filler-view__skin_romb-1-black')
+                        .style.display = 'flex'
+                } else if (e.target.value === '2') {
+                    appData.cleanFillerSkinColor()
+                    document.querySelector('.constructor-filler-view__skin_romb-1-blue')
+                        .style.display = 'flex'
+                } else if (e.target.value === '3') {
+                    appData.cleanFillerSkinColor()
+                    document.querySelector('.constructor-filler-view__skin_romb-1-gold')
+                        .style.display = 'flex'
+                } else if (e.target.value === '4') {
+                    appData.cleanFillerSkinColor()
+                    document.querySelector('.constructor-filler-view__skin_romb-1-burgundy')
+                        .style.display = 'flex'
+                } else if (e.target.value === '5') {
+                    appData.cleanFillerSkinColor()
+                    document.querySelector('.constructor-filler-view__skin_romb-1-gray')
+                        .style.display = 'flex'
+                } else if (e.target.value === '6') {
+                    appData.cleanFillerSkinColor()
+                    document.querySelector('.constructor-filler-view__skin_romb-1-brown')
+                        .style.display = 'flex'
+                } else if (e.target.value === '7') {
+                    appData.cleanFillerSkinColor()
+                    document.querySelector('.constructor-filler-view__skin_romb-1-sand')
+                        .style.display = 'flex'
+                } else {
+                    appData.cleanFillerSkinColor()
+                }
+            })
+        } else {
+            appData.cleanFillerSkinColor()
+        }
+        if (getId.getAttribute('id') === 'skin-color-selector-romb-2') {
+            getId.addEventListener('change', (e) => {
+                if (e.target.value === '1') {
+                    appData.cleanFillerSkinColor()
+                    document.querySelector('.constructor-filler-view__skin_romb-1-black')
+                        .style.display = 'flex'
+                } else if (e.target.value === '5') {
+                    appData.cleanFillerSkinColor()
+                    document.querySelector('.constructor-filler-view__skin_romb-2-gray')
+                        .style.display = 'flex'
+                } else if (e.target.value === '6') {
+                    appData.cleanFillerSkinColor()
+                    document.querySelector('.constructor-filler-view__skin_romb-2-brown')
+                        .style.display = 'flex'
+                } else if (e.target.value === '7') {
+                    appData.cleanFillerSkinColor()
+                    document.querySelector('.constructor-filler-view__skin_romb-1-sand')
+                        .style.display = 'flex'
+                } else {
+                    appData.cleanFillerSkinColor()
+                }
+            })
+        } else {
+            appData.cleanFillerSkinColor()
+        }
+        if (getId.getAttribute('id') === 'skin-color-selector-romb-3') {
+            getId.addEventListener('change', (e) => {
+                if (e.target.value === '1') {
+                    appData.cleanFillerSkinColor()
+                    document.querySelector('.constructor-filler-view__skin_romb-3-black')
+                        .style.display = 'flex'
+                } else if (e.target.value === '2') {
+                    appData.cleanFillerSkinColor()
+                    document.querySelector('.constructor-filler-view__skin_romb-3-blue')
+                        .style.display = 'flex'
+                } else if (e.target.value === '7') {
+                    appData.cleanFillerSkinColor()
+                    document.querySelector('.constructor-filler-view__skin_romb-1-sand')
+                        .style.display = 'flex'
+                } else {
+                    appData.cleanFillerSkinColor()
+                }
+            })
+        }
+        if (getId.getAttribute('id') === 'skin-color-selector-square') {
+            getId.addEventListener('change', (e) => {
+                if (e.target.value === '1') {
+                    appData.cleanFillerSkinColor()
+                    document.querySelector('.constructor-filler-view__skin_square-black')
+                        .style.display = 'flex'
+                } else {
+                    appData.cleanFillerSkinColor()
+                }
+            })
+        }
     },
     init: () => {
         setContainer.addEventListener('click', (e) => {
@@ -75,6 +176,20 @@ const appData = {
                 }
             }
             appData.getFullPrice()
+        })
+        patterns.addEventListener('click', (e) => {
+            if (e.target.closest('input')) {
+                if (e.target.checked) {
+                    document.querySelectorAll('select[name="skin-color-selector"]').forEach(item => {
+                        item.style.display = ''
+                        item.value = 'Цвета'
+                    })
+                    const getId = document.getElementById(`${e.target.getAttribute('data-pattern')}`)
+
+                    getId.style.display = 'block'
+                    appData.setColorStr(getId)
+                }
+            }
         })
     },
 }

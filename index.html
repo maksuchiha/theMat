@@ -156,19 +156,19 @@
                                     </span>
                                 </h3>
                                 <div class="constructor-filler-view__patterns">
-                                    <input value="1" name="pattern" id="pattern-1" aria-label="" type="radio">
+                                    <input data-pattern="skin-color-selector-romb-1" value="1" name="pattern" id="pattern-1" aria-label="" type="radio">
                                     <label for="pattern-1">
                                         <img src="./img/patterns/1.png" alt="pattern-1">
                                     </label>
-                                    <input value="2" name="pattern" id="pattern-2" aria-label="" type="radio">
+                                    <input data-pattern="skin-color-selector-romb-2" value="2" name="pattern" id="pattern-2" aria-label="" type="radio">
                                     <label for="pattern-2">
                                         <img src="./img/patterns/2.png" alt="pattern-2">
                                     </label>
-                                    <input value="3" name="pattern" id="pattern-3" aria-label="" type="radio">
+                                    <input data-pattern="skin-color-selector-romb-3" value="3" name="pattern" id="pattern-3" aria-label="" type="radio">
                                     <label for="pattern-3">
                                         <img src="./img/patterns/3.png" alt="pattern-3">
                                     </label>
-                                    <input value="4" name="pattern" id="pattern-4" aria-label="" type="radio">
+                                    <input data-pattern="skin-color-selector-square" value="4" name="pattern" id="pattern-4" aria-label="" type="radio">
                                     <label for="pattern-4">
                                         <img src="./img/patterns/4.png" alt="pattern-4">
                                     </label>
@@ -178,21 +178,102 @@
                                 <h3 class="constructor-filler-view__title">
                                     4. Цвет кожи
                                 </h3>
-                                <div class="constructor-filler-view__skin">
-                                    <input value="1" name="skin-color" id="skin-color-1" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__black" for="skin-color-1"></label>
-                                    <input value="2" name="skin-color" id="skin-color-2" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__blue" for="skin-color-2"></label>
-                                    <input value="3" name="skin-color" id="skin-color-3" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__orange" for="skin-color-3"></label>
-                                    <input value="4" name="skin-color" id="skin-color-4" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__red" for="skin-color-4"></label>
-                                    <input value="5" name="skin-color" id="skin-color-5" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__gray" for="skin-color-5"></label>
-                                    <input value="6" name="skin-color" id="skin-color-6" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__brown" for="skin-color-6"></label>
-                                    <input value="7" name="skin-color" id="skin-color-7" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__sand" for="skin-color-7"></label>
+                                <select class="constructor-select" aria-label="" name="skin-color-selector" id="skin-color-selector-romb-1">
+                                    <option selected>Цвета</option>
+                                    <option value="1">Чёрный</option>
+                                    <option value="2">Синий</option>
+                                    <option value="3">Рыжий</option>
+                                    <option value="4">Бордовый</option>
+                                    <option value="5">Серый</option>
+                                    <option value="6">Коричневый</option>
+                                    <option value="7">Бежевый</option>
+                                </select>
+                                <select class="constructor-select" aria-label="" name="skin-color-selector" id="skin-color-selector-romb-2">
+                                    <option selected>Цвета</option>
+                                    <option value="1">Чёрный</option>
+                                    <option value="5">Серый</option>
+                                    <option value="6">Коричневый</option>
+                                    <option value="7">Бежевый</option>
+                                </select>
+                                <select class="constructor-select" aria-label="" name="skin-color-selector" id="skin-color-selector-romb-3">
+                                    <option selected>Цвета</option>
+                                    <option value="1">Чёрный</option>
+                                    <option value="2">Синий</option>
+                                    <option value="7">Бежевый</option>
+                                </select>
+                                <select class="constructor-select" aria-label="" name="skin-color-selector" id="skin-color-selector-square">
+                                    <option selected>Цвета</option>
+                                    <option value="1">Чёрный</option>
+                                </select>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-1-black">
+                                    <input value="1" name="skin-color-romb" id="skin-color-romb-black-1" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__black" for="skin-color-romb-black-1"></label>
+                                    <input value="2" name="skin-color-romb" id="skin-color-romb-black-2" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__white" for="skin-color-romb-black-2"></label>
+                                    <input value="3" name="skin-color-romb" id="skin-color-romb-black-3" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__gold" for="skin-color-romb-black-3"></label>
+                                    <input value="4" name="skin-color-romb" id="skin-color-romb-black-4" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__blue" for="skin-color-romb-black-4"></label>
+                                    <input value="8" name="skin-color-romb" id="skin-color-romb-black-8" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__red" for="skin-color-romb-black-8"></label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-1-blue">
+                                    <input value="1" name="skin-color-romb" id="skin-color-romb-blue-1" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__black" for="skin-color-romb-blue-1"></label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-1-gold">
+                                    <input value="3" name="skin-color-romb" id="skin-color-romb-gold-1" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__gold" for="skin-color-romb-gold-1"></label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-1-burgundy">
+                                    <input value="1" name="skin-color-romb" id="skin-color-romb-burgundy-1" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__black" for="skin-color-romb-burgundy-1"></label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-1-gray">
+                                    <input value="2" name="skin-color-romb" id="skin-color-romb-gray-1" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__white" for="skin-color-romb-gray-1"></label>
+                                    <input value="1" name="skin-color-romb" id="skin-color-romb-gray-2" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__black" for="skin-color-romb-gray-2"></label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-1-brown">
+                                    <input value="6" name="skin-color-romb" id="skin-color-romb-brown-1" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__brown" for="skin-color-romb-brown-1"></label>
+                                    <input value="1" name="skin-color-romb" id="skin-color-romb-brown-2" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__black" for="skin-color-romb-brown-2"></label>
+                                    <input value="3" name="skin-color-romb" id="skin-color-romb-brown-3" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__gold" for="skin-color-romb-brown-3"></label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-1-sand">
+                                    <input value="7" name="skin-color-romb" id="skin-color-romb-sand-1" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__sand" for="skin-color-romb-sand-1"></label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-2-gray">
+                                    <input value="1" name="skin-color-romb" id="skin-color-romb-gray-2-1" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__black" for="skin-color-romb-gray-2-1"></label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-2-brown">
+                                    <input value="5" name="skin-color-romb" id="skin-color-romb-brown-2-1" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__gray" for="skin-color-romb-brown-2-1"></label>
+                                    <input value="1" name="skin-color-romb" id="skin-color-romb-brown-2-2" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__black" for="skin-color-romb-brown-2-2"></label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-3-black">
+                                    <input value="1" name="skin-color-romb" id="skin-color-romb-black-3-1" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__black" for="skin-color-romb-black-3-1"></label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-3-blue">
+                                    <input value="4" name="skin-color-romb" id="skin-color-romb-blue-3-1" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__blue" for="skin-color-romb-blue-3-1"></label>
+                                </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_square-black">
+                                    <input value="1" name="skin-color-romb" id="skin-color-square-black-1" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__black" for="skin-color-square-black-1"></label>
+                                    <input value="2" name="skin-color-romb" id="skin-color-square-black-2" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__white" for="skin-color-square-black-2"></label>
+                                    <input value="4" name="skin-color-romb" id="skin-color-square-black-3" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__blue" for="skin-color-square-black-3"></label>
+                                    <input value="8" name="skin-color-romb" id="skin-color-square-black-4" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__red" for="skin-color-square-black-4"></label>
                                 </div>
                             </div>
                             <div class="constructor-filler-view__item">
@@ -225,7 +306,7 @@
                                     6. Цвет канта
                                 </h3>
                                 <div class="constructor-filler-view__filler">
-                                    <select aria-label="" name="edging-filler-color" id="edging-filler-color">
+                                    <select class="constructor-select" aria-label="" name="edging-filler-color" id="edging-filler-color">
                                         <option selected>Наполнителя</option>
                                         <option value="1">Чёрный</option>
                                         <option value="2">Серый</option>
@@ -237,7 +318,7 @@
                                         <option value="8">Бежевый</option>
                                         <option value="9">Бордовый</option>
                                     </select>
-                                    <select aria-label="" name="edging-color" id="edging-color">
+                                    <select class="constructor-select" aria-label="" name="edging-color" id="edging-color">
                                         <option selected>Кожи</option>
                                         <option value="1">Чёрный</option>
                                         <option value="2">Серый</option>
