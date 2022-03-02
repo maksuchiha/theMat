@@ -5,16 +5,28 @@ const constructorOther = document.querySelector('.constructor-set__add')
 const footerCheckbox = document.querySelector('.constructor-footer__checkbox')
 const outputSum = document.querySelector('.constructor-footer__sum > span')
 const fillerChoice = document.querySelector('.constructor-filler__choice')
+const fillerColors = document.querySelectorAll('.constructor-filler-view__fillers')
 const fillerColor = document.querySelector('.constructor-filler-view__fillers')
 const fillerColorEva = document.querySelector('.constructor-filler-view__fillers_eva')
 const patterns = document.querySelector('.constructor-filler-view__patterns')
-
+const endingFillerColors = document.getElementById('edging-filler-color')
+const endingSkinColors = document.getElementById('edging-color')
+const image = document.querySelector('.constructor-filler__img > img')
+let resultCheck
 
 const appData = {
     fullPrice: 0,
     setPrice: 0,
     otherServices: 0,
     accessories: 0,
+    typeCarped: '1',
+    skinColor: '0',
+    typePatterns: '0',
+    colorStr: '0',
+    colorFiller: '0',
+    colorEdgingFiller: '0',
+    colorEdgingSkin: '0',
+    imageNumber: '0',
     getFullPrice: () => {
         appData.fullPrice = appData.setPrice + appData.otherServices + appData.accessories
         outputSum.textContent = appData.fullPrice
@@ -32,11 +44,56 @@ const appData = {
             }
         })
     },
+    checkExists: (imageUrl, callback) => {
+        const img = new Image();
+
+        img.onerror = function() {
+            callback(false);
+        };
+
+        img.onload = function() {
+            callback(true);
+        };
+
+        img.src = imageUrl;
+    },
+    getImageNumber: () => {
+        appData.imageNumber = appData.typeCarped + appData.skinColor + appData.typePatterns + appData.colorStr + appData.colorFiller + appData.colorEdgingFiller + appData.colorEdgingSkin
+        if (appData.imageNumber.length === 7) {
+            appData.checkExists(`./img/rugs/${appData.imageNumber}.jpg`, (exits) => {
+                if (exits) {
+                    image.setAttribute('src', `./img/rugs/${appData.imageNumber}.jpg`)
+                } else {
+                    image.setAttribute('src', `./img/products/product.png`)
+                }
+            })
+        }
+    },
     cleanFillerSkinColor: () => {
         document.querySelectorAll('.constructor-filler-view__skin').forEach(item => {
-            item.style.display = ''
+            item.classList.remove('active_flex')
         })
+    },
+    checkColorStr: () => {
+        const colorsActive = document.querySelector('.constructor-filler-view__skin.active_flex')
 
+        colorsActive.onclick = (e) => {
+            if (e.target.checked) {
+                appData.colorStr = `${e.target.value}`
+            }
+            appData.getImageNumber()
+        }
+    },
+    checkSkinColor: (select) => {
+        select.addEventListener('change', (e) => {
+            appData.skinColor = `${e.target.value}`
+            if (e.target.value !== 'Цвета') {
+                appData.checkColorStr()
+            } else {
+                e.target.value = 0
+            }
+            appData.getImageNumber()
+        })
     },
     setColorStr: (getId) => {
         if (getId.getAttribute('id') === 'skin-color-selector-romb-1') {
@@ -44,31 +101,31 @@ const appData = {
                 if (e.target.value === '1') {
                     appData.cleanFillerSkinColor()
                     document.querySelector('.constructor-filler-view__skin_romb-1-black')
-                        .style.display = 'flex'
+                        .classList.add('active_flex')
                 } else if (e.target.value === '2') {
                     appData.cleanFillerSkinColor()
                     document.querySelector('.constructor-filler-view__skin_romb-1-blue')
-                        .style.display = 'flex'
+                        .classList.add('active_flex')
                 } else if (e.target.value === '3') {
                     appData.cleanFillerSkinColor()
                     document.querySelector('.constructor-filler-view__skin_romb-1-gold')
-                        .style.display = 'flex'
+                        .classList.add('active_flex')
                 } else if (e.target.value === '4') {
                     appData.cleanFillerSkinColor()
                     document.querySelector('.constructor-filler-view__skin_romb-1-burgundy')
-                        .style.display = 'flex'
+                        .classList.add('active_flex')
                 } else if (e.target.value === '5') {
                     appData.cleanFillerSkinColor()
                     document.querySelector('.constructor-filler-view__skin_romb-1-gray')
-                        .style.display = 'flex'
+                        .classList.add('active_flex')
                 } else if (e.target.value === '6') {
                     appData.cleanFillerSkinColor()
                     document.querySelector('.constructor-filler-view__skin_romb-1-brown')
-                        .style.display = 'flex'
+                        .classList.add('active_flex')
                 } else if (e.target.value === '7') {
                     appData.cleanFillerSkinColor()
                     document.querySelector('.constructor-filler-view__skin_romb-1-sand')
-                        .style.display = 'flex'
+                        .classList.add('active_flex')
                 } else {
                     appData.cleanFillerSkinColor()
                 }
@@ -81,19 +138,19 @@ const appData = {
                 if (e.target.value === '1') {
                     appData.cleanFillerSkinColor()
                     document.querySelector('.constructor-filler-view__skin_romb-1-black')
-                        .style.display = 'flex'
+                        .classList.add('active_flex')
                 } else if (e.target.value === '5') {
                     appData.cleanFillerSkinColor()
                     document.querySelector('.constructor-filler-view__skin_romb-2-gray')
-                        .style.display = 'flex'
+                        .classList.add('active_flex')
                 } else if (e.target.value === '6') {
                     appData.cleanFillerSkinColor()
                     document.querySelector('.constructor-filler-view__skin_romb-2-brown')
-                        .style.display = 'flex'
+                        .classList.add('active_flex')
                 } else if (e.target.value === '7') {
                     appData.cleanFillerSkinColor()
                     document.querySelector('.constructor-filler-view__skin_romb-1-sand')
-                        .style.display = 'flex'
+                        .classList.add('active_flex')
                 } else {
                     appData.cleanFillerSkinColor()
                 }
@@ -106,31 +163,36 @@ const appData = {
                 if (e.target.value === '1') {
                     appData.cleanFillerSkinColor()
                     document.querySelector('.constructor-filler-view__skin_romb-3-black')
-                        .style.display = 'flex'
+                        .classList.add('active_flex')
                 } else if (e.target.value === '2') {
                     appData.cleanFillerSkinColor()
                     document.querySelector('.constructor-filler-view__skin_romb-3-blue')
-                        .style.display = 'flex'
+                        .classList.add('active_flex')
                 } else if (e.target.value === '7') {
                     appData.cleanFillerSkinColor()
                     document.querySelector('.constructor-filler-view__skin_romb-1-sand')
-                        .style.display = 'flex'
+                        .classList.add('active_flex')
                 } else {
                     appData.cleanFillerSkinColor()
                 }
             })
+        } else {
+            appData.cleanFillerSkinColor()
         }
         if (getId.getAttribute('id') === 'skin-color-selector-square') {
             getId.addEventListener('change', (e) => {
                 if (e.target.value === '1') {
                     appData.cleanFillerSkinColor()
                     document.querySelector('.constructor-filler-view__skin_square-black')
-                        .style.display = 'flex'
+                        .classList.add('active_flex')
                 } else {
                     appData.cleanFillerSkinColor()
                 }
             })
+        } else {
+            appData.cleanFillerSkinColor()
         }
+        appData.checkSkinColor(getId)
     },
     init: () => {
         setContainer.addEventListener('click', (e) => {
@@ -162,34 +224,62 @@ const appData = {
             }
             appData.getFullPrice()
         })
-        fillerChoice.addEventListener('click', (e) => {
+        fillerChoice.onclick = (e) => {
             if (e.target.closest('input')) {
                 if (e.target.checked) {
                     appData.addFillerPrice()
+                    appData.typeCarped = `${e.target.value}`
                 }
                 if (e.target.getAttribute('id') === 'eva') {
-                    fillerColor.style.display = 'none'
-                    fillerColorEva.style.display = 'flex'
+                    fillerColor.classList.remove('active_flex')
+                    fillerColorEva.classList.add('active_flex')
                 } else {
-                    fillerColor.style.display = 'flex'
-                    fillerColorEva.style.display = 'none'
+                    fillerColor.classList.add('active_flex')
+                    fillerColorEva.classList.remove('active_flex')
                 }
             }
             appData.getFullPrice()
-        })
-        patterns.addEventListener('click', (e) => {
+        }
+        patterns.onclick = (e) => {
             if (e.target.closest('input')) {
                 if (e.target.checked) {
+                    appData.typePatterns = `${e.target.value}`
+
                     document.querySelectorAll('select[name="skin-color-selector"]').forEach(item => {
-                        item.style.display = ''
+                        item.classList.remove('active')
                         item.value = 'Цвета'
                     })
                     const getId = document.getElementById(`${e.target.getAttribute('data-pattern')}`)
 
-                    getId.style.display = 'block'
+                    getId.classList.add('active')
                     appData.setColorStr(getId)
                 }
             }
+            appData.getImageNumber()
+        }
+        fillerColors.forEach(item => {
+            item.onclick = (e) => {
+                if (e.target.checked) {
+                    appData.colorFiller = `${e.target.value}`
+                }
+                appData.getImageNumber()
+            }
+        })
+        endingFillerColors.addEventListener('change', (e) => {
+            if (e.target.value !== 'Наполнителя') {
+                appData.colorEdgingFiller = `${e.target.value}`
+            } else {
+                appData.colorEdgingFiller = `0`
+            }
+            appData.getImageNumber()
+        })
+        endingSkinColors.addEventListener('change', (e) => {
+            if (e.target.value !== 'Кожи') {
+                appData.colorEdgingSkin = `${e.target.value}`
+            } else {
+                appData.colorEdgingSkin = `0`
+            }
+            appData.getImageNumber()
         })
     },
 }
