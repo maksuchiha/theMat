@@ -12,7 +12,7 @@ const patterns = document.querySelector('.constructor-filler-view__patterns')
 const endingFillerColors = document.getElementById('edging-filler-color')
 const endingSkinColors = document.getElementById('edging-color')
 const image = document.querySelector('.constructor-filler__img > img')
-let resultCheck
+
 
 const appData = {
     fullPrice: 0,
