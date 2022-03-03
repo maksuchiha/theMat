@@ -300,6 +300,10 @@ ul {
   display: flex !important;
 }
 
+.main {
+  min-height: 100vh;
+}
+
 @media (max-width: 1230px) {
   .container {
     max-width: 1022px;
@@ -1018,6 +1022,116 @@ ul {
   .help__info {
     right: 0;
   }
+}
+.box {
+  background: url("./../img/box/bg.jpg") center/cover no-repeat;
+  min-height: 100vh;
+  color: #fff;
+  padding: 50px;
+}
+.box-top {
+  display: flex;
+  justify-content: center;
+}
+.box-top__info {
+  font-size: 20px;
+  width: 40%;
+  margin-left: 100px;
+}
+.box__title {
+  width: 50%;
+  text-align: right;
+}
+.box-constructor {
+  display: flex;
+  justify-content: space-between;
+}
+.box-constructor__img {
+  width: 65%;
+  border-radius: 27px;
+}
+.box-constructor__img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 27px;
+  object-fit: cover;
+}
+.box-constructor__set {
+  width: 33%;
+}
+.box-constructor-toggle {
+  display: flex;
+}
+.box-constructor-toggle input {
+  display: none;
+}
+.box-constructor-toggle input:checked + label {
+  background: #C3C3C3;
+  color: #000;
+}
+.box-constructor-toggle label {
+  cursor: pointer;
+}
+.box-constructor-toggle__button {
+  padding: 15px 25px;
+  width: 50%;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.88);
+  border-radius: 20px 20px 0 0;
+  border: 1px solid #C3C3C3;
+  font-size: 22px;
+}
+.box-constructor__settings {
+  padding: 40px 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #C3C3C3;
+  border-radius: 0 0 15px 15px;
+}
+.box-constructor__item:first-of-type {
+  display: flex;
+  align-items: center;
+}
+.box-constructor__item:first-of-type .box-constructor__subtitle {
+  margin-bottom: 0;
+}
+.box-constructor__item:first-of-type input {
+  margin-left: 35px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  padding: 5px 15px;
+}
+.box-constructor__item:not(:last-of-type) {
+  margin-bottom: 35px;
+}
+.box-constructor__subtitle {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  font-family: Montserrat, sans-serif;
+  display: block;
+  margin-bottom: 15px;
+}
+.box-constructor__colors {
+  display: flex;
+}
+.box-constructor__colors label {
+  border: 1px solid #fff;
+}
+.box-constructor-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.box-constructor-price__info {
+  font-size: 24px;
+  text-decoration: underline;
+}
+.box-constructor-price__sum {
+  font-weight: 900;
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
 }
 
 /*# sourceMappingURL=style.css.map */
