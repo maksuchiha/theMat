@@ -6,6 +6,8 @@
     <title>The Mat</title>
     <link rel="stylesheet" href="./../style/style.css">
     <script src="./../script/burger.js" defer></script>
+    <script src="./../script/libs/swiper-bundle.min.js" defer></script>
+    <script src="./../script/box.js" defer></script>
 </head>
 <body>
 <header class="header">
@@ -92,16 +94,30 @@
                 </div>
             </div>
             <div class="box-constructor">
-                <div class="box-constructor__img">
-                    <img src="./../img/box/box.jpg" alt="box">
+                <div class="box-constructor__img box-constructor-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./../img/box/box.jpg" alt="box">
+                        </div>
+                    </div>
+                    <button class="box-constructor-slider__button box-constructor-slider__button_left">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23.6842 15.7895H10.6579L15.7895 20.9211L14.7411 22.1053L7.63579 15L14.7411 7.89474L15.7895 9.07895L10.6579 14.2105H23.6842V15.7895ZM0 15C-2.93527e-08 13.0302 0.387986 11.0796 1.14181 9.25975C1.89563 7.43987 3.00052 5.78628 4.3934 4.3934C5.78628 3.00052 7.43986 1.89563 9.25975 1.14181C11.0796 0.387987 13.0302 0 15 0C16.9698 0 18.9204 0.387987 20.7403 1.14181C22.5601 1.89563 24.2137 3.00052 25.6066 4.3934C26.9995 5.78628 28.1044 7.43987 28.8582 9.25975C29.612 11.0796 30 13.0302 30 15C30 18.9782 28.4196 22.7936 25.6066 25.6066C22.7936 28.4196 18.9782 30 15 30C11.0218 30 7.20644 28.4196 4.3934 25.6066C1.58035 22.7936 5.92805e-08 18.9782 0 15ZM1.57895 15C1.57895 18.5595 2.99295 21.9732 5.50988 24.4901C8.02682 27.0071 11.4405 28.4211 15 28.4211C18.5595 28.4211 21.9732 27.0071 24.4901 24.4901C27.0071 21.9732 28.4211 18.5595 28.4211 15C28.4211 11.4405 27.0071 8.02682 24.4901 5.50988C21.9732 2.99295 18.5595 1.57895 15 1.57895C11.4405 1.57895 8.02682 2.99295 5.50988 5.50988C2.99295 8.02682 1.57895 11.4405 1.57895 15Z" fill="white"/>
+                        </svg>
+                    </button>
+                    <button class="box-constructor-slider__button box-constructor-slider__button_right">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.31579 14.2105H19.3421L14.2105 9.07895L15.2589 7.89474L22.3642 15L15.2589 22.1053L14.2105 20.9211L19.3421 15.7895H6.31579V14.2105ZM30 15C30 16.9698 29.612 18.9204 28.8582 20.7403C28.1044 22.5601 26.9995 24.2137 25.6066 25.6066C24.2137 26.9995 22.5601 28.1044 20.7403 28.8582C18.9204 29.612 16.9698 30 15 30C13.0302 30 11.0796 29.612 9.25975 28.8582C7.43987 28.1044 5.78628 26.9995 4.3934 25.6066C3.00052 24.2137 1.89563 22.5601 1.14181 20.7403C0.387986 18.9204 -2.93527e-08 16.9698 0 15C5.92805e-08 11.0218 1.58035 7.20644 4.3934 4.3934C7.20644 1.58035 11.0218 0 15 0C18.9782 0 22.7936 1.58035 25.6066 4.3934C28.4196 7.20644 30 11.0218 30 15ZM28.4211 15C28.4211 11.4405 27.0071 8.02682 24.4901 5.50988C21.9732 2.99295 18.5595 1.57895 15 1.57895C11.4405 1.57895 8.02682 2.99295 5.50988 5.50988C2.99295 8.02682 1.57895 11.4405 1.57895 15C1.57895 18.5595 2.99295 21.9732 5.50988 24.4901C8.02682 27.0071 11.4405 28.4211 15 28.4211C18.5595 28.4211 21.9732 27.0071 24.4901 24.4901C27.0071 21.9732 28.4211 18.5595 28.4211 15Z" fill="white"/>
+                        </svg>
+                    </button>
                 </div>
                 <div class="box-constructor__set">
                     <div class="box-constructor-toggle">
-                        <input id="box-constructor-type-eco" checked aria-label="" name="box-constructor__type-skin" type="radio">
+                        <input data-eco-btn="1" id="box-constructor-type-eco" checked aria-label="" name="box-constructor__type-skin" type="radio">
                         <label for="box-constructor-type-eco" class="box-constructor-toggle__button box-constructor-toggle__button_active">
                             Эко-кожа
                         </label>
-                        <input id="box-constructor-type-alcantra" aria-label="" name="box-constructor__type-skin" type="radio">
+                        <input data-eco-btn="2" id="box-constructor-type-alcantra" aria-label="" name="box-constructor__type-skin" type="radio">
                         <label for="box-constructor-type-alcantra" class="box-constructor-toggle__button">
                             Алькантара
                         </label>
@@ -112,7 +128,53 @@
                                 <h2 class="box-constructor__subtitle">
                                     1. Размер
                                 </h2>
-                                <input aria-label="" type="text">
+                                <select class="box-constructor__select box-constructor__select_active" data-select-skin="1" aria-label="" name="box-constructor__size" id="box-constructor__size-eco">
+                                    <option selected value="0">
+                                        Выберите размер
+                                    </option>
+                                    <option value="1700">
+                                        30х30х30
+                                    </option>
+                                    <option value="2000">
+                                        40х30х30
+                                    </option>
+                                    <option value="2300">
+                                        50х30х30
+                                    </option>
+                                    <option value="2800">
+                                        60х30х30
+                                    </option>
+                                    <option value="3200">
+                                        70х30х30
+                                    </option>
+                                    <option value="3800">
+                                        80х30х30
+                                    </option>
+                                </select>
+                                <select class="box-constructor__select" data-select-skin="2" aria-label="" name="box-constructor__size" id="box-constructor__size-alcor">
+                                    <option selected value="0">
+                                        Выберите размер
+                                    </option>
+                                    <option value="2200">
+                                        30х30х30
+                                    </option>
+                                    <option value="2700">
+                                        40х30х30
+                                    </option>
+                                    <option value="3200">
+                                        50х30х30
+                                    </option>
+                                    <option value="3800">
+                                        60х30х30
+                                    </option>
+                                    <option value="4400">
+                                        70х30х30
+                                    </option>
+                                    <option value="4900">
+                                        80х30х30
+                                    </option>
+                                </select>
+
                             </div>
                             <div class="box-constructor__item">
                                 <h2 class="box-constructor__subtitle">
@@ -139,17 +201,17 @@
                                 </h2>
                                 <div class="box-constructor__colors constructor-filler-view__skin constructor-filler-view__skin_romb-1-black">
                                     <input value="1" name="box-color-skin-2" id="box-color-skin-2-1" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__black" for="box-color-skin-1"></label>
+                                    <label class="constructor-filler-view__black" for="box-color-skin-2-1"></label>
                                     <input value="2" name="box-color-skin-2" id="box-color-skin-2-2" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__gray" for="box-color-skin-2"></label>
+                                    <label class="constructor-filler-view__gray" for="box-color-skin-2-2"></label>
                                     <input value="3" name="box-color-skin-2" id="box-color-skin-2-3" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__sand" for="box-color-skin-3"></label>
+                                    <label class="constructor-filler-view__sand" for="box-color-skin-2-3"></label>
                                     <input value="4" name="box-color-skin-2" id="box-color-skin-2-4" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__blue" for="box-color-skin-4"></label>
+                                    <label class="constructor-filler-view__blue" for="box-color-skin-2-4"></label>
                                     <input value="5" name="box-color-skin-2" id="box-color-skin-2-5" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__red" for="box-color-skin-5"></label>
+                                    <label class="constructor-filler-view__red" for="box-color-skin-2-5"></label>
                                     <input value="6" name="box-color-skin-2" id="box-color-skin-2-6" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__brown" for="box-color-skin-6"></label>
+                                    <label class="constructor-filler-view__brown" for="box-color-skin-2-6"></label>
                                 </div>
                             </div>
                             <div class="box-constructor__item">
@@ -158,22 +220,22 @@
                                 </h2>
                                 <div class="box-constructor__colors constructor-filler-view__skin constructor-filler-view__skin_romb-1-black">
                                     <input value="1" name="box-color-skin-3" id="box-color-skin-3-1" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__black" for="box-color-skin-1"></label>
+                                    <label class="constructor-filler-view__black" for="box-color-skin-3-1"></label>
                                     <input value="2" name="box-color-skin-3" id="box-color-skin-3-2" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__gray" for="box-color-skin-2"></label>
+                                    <label class="constructor-filler-view__gray" for="box-color-skin-3-2"></label>
                                     <input value="3" name="box-color-skin-3" id="box-color-skin-3-3" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__sand" for="box-color-skin-3"></label>
+                                    <label class="constructor-filler-view__sand" for="box-color-skin-3-3"></label>
                                     <input value="4" name="box-color-skin-3" id="box-color-skin-3-4" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__blue" for="box-color-skin-4"></label>
+                                    <label class="constructor-filler-view__blue" for="box-color-skin-3-4"></label>
                                     <input value="5" name="box-color-skin-3" id="box-color-skin-3-5" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__red" for="box-color-skin-5"></label>
+                                    <label class="constructor-filler-view__red" for="box-color-skin-3-5"></label>
                                     <input value="6" name="box-color-skin-3" id="box-color-skin-3-6" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__brown" for="box-color-skin-6"></label>
+                                    <label class="constructor-filler-view__brown" for="box-color-skin-3-6"></label>
                                 </div>
                             </div>
                             <div class="box-constructor-price">
                                 <div class="box-constructor-price__info">
-                                    Цена: <span class="box-constructor-price__sum">1.000р.</span>
+                                    Цена: <span class="box-constructor-price__sum">0</span>р.
                                 </div>
                                 <button class="constructor-footer__button">
                                     купить
