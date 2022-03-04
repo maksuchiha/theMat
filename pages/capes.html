@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./../style/style.css">
     <script src="./../script/burger.js" defer></script>
     <script src="./../script/libs/swiper-bundle.min.js" defer></script>
-    <script src="./../script/box.js" defer></script>
+    <script src="./../script/capes.js" defer></script>
 </head>
 <body>
 <header class="header">
@@ -83,21 +83,20 @@
     </div>
 </header>
 <main class="main">
-    <section class="box">
+    <section class="capes">
         <div class="container">
             <div class="box-top">
                 <h1 class="constructor__title box__title">
-                    Универсальные боксы в багажник
+                    Накидки на сиденья из алькантары
                 </h1>
                 <div class="box-top__info">
-                    Бокс в багажник – отличный способ грамотно распределить внутреннее пространство и сохранить порядок.
-                </div>
+                    Мягкий материал с приятной текстурой, устойчивый к истиранию и износу, подчеркнёт изыск салона машины и отличный вкус её обладателя.                </div>
             </div>
-            <div class="box-constructor">
-                <div class="box-constructor__img box-constructor-slider">
+            <div class="capes-constructor">
+                <div class="capes-constructor__img box-constructor-slider">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="./../img/box/box.jpg" alt="box">
+                            <img src="./../img/capes/cape.jpg" alt="cape">
                         </div>
                     </div>
                     <button class="box-constructor-slider__button box-constructor-slider__button_left">
@@ -111,137 +110,77 @@
                         </svg>
                     </button>
                 </div>
-                <div class="box-constructor__set">
-                    <div class="box-constructor-toggle">
-                        <input data-eco-btn="1" id="box-constructor-type-eco" checked aria-label="" name="box-constructor__type-skin" type="radio">
-                        <label for="box-constructor-type-eco" class="box-constructor-toggle__button box-constructor-toggle__button_active">
-                            Эко-кожа
-                        </label>
-                        <input data-eco-btn="2" id="box-constructor-type-alcantra" aria-label="" name="box-constructor__type-skin" type="radio">
-                        <label for="box-constructor-type-alcantra" class="box-constructor-toggle__button">
-                            Алькантара
-                        </label>
+                <div class="capes-constructor__settings">
+                    <div class="capes-constructor__item">
+                        <h2 class="box-constructor__subtitle">
+                            1. Цвет Алькантары
+                        </h2>
+                        <div class="box-constructor__colors constructor-filler-view__skin constructor-filler-view__skin_romb-1-black">
+                            <input value="чёрная алькантара" name="capes-color-alc" id="capes-color-alc-1" aria-label="" type="radio">
+                            <label class="constructor-filler-view__black" for="capes-color-alc-1"></label>
+                            <input value="бежевая алькантара" name="capes-color-alc" id="capes-color-alc-2" aria-label="" type="radio">
+                            <label class="constructor-filler-view__sand" for="capes-color-alc-2"></label>
+                            <input value="коричневая алькантара" name="capes-color-alc" id="capes-color-alc-3" aria-label="" type="radio">
+                            <label class="constructor-filler-view__brown" for="capes-color-alc-3"></label>
+                            <input value="синяя алькантара" name="capes-color-alc" id="capes-color-alc-4" aria-label="" type="radio">
+                            <label class="constructor-filler-view__blue" for="capes-color-alc-4"></label>
+                            <input value="красная алькантара" name="capes-color-alc" id="capes-color-alc-5" aria-label="" type="radio">
+                            <label class="constructor-filler-view__red" for="capes-color-alc-5"></label>
+                            <input value="серая алькантара" name="capes-color-alc" id="capes-color-alc-6" aria-label="" type="radio">
+                            <label class="constructor-filler-view__gray" for="capes-color-alc-6"></label>
+                        </div>
                     </div>
-                    <div class="box-constructor__settings">
-                        <form class="box-constructor__form" action="#">
-                            <div class="box-constructor__item">
-                                <h2 class="box-constructor__subtitle">
-                                    1. Размер
-                                </h2>
-                                <select class="box-constructor__select box-constructor__select_active" data-select-skin="1" aria-label="" name="box-constructor__size" id="box-constructor__size-eco">
-                                    <option selected value="0">
-                                        Выберите размер
-                                    </option>
-                                    <option value="1700">
-                                        30х30х30
-                                    </option>
-                                    <option value="2000">
-                                        40х30х30
-                                    </option>
-                                    <option value="2300">
-                                        50х30х30
-                                    </option>
-                                    <option value="2800">
-                                        60х30х30
-                                    </option>
-                                    <option value="3200">
-                                        70х30х30
-                                    </option>
-                                    <option value="3800">
-                                        80х30х30
-                                    </option>
-                                </select>
-                                <select class="box-constructor__select" data-select-skin="2" aria-label="" name="box-constructor__size" id="box-constructor__size-alcor">
-                                    <option selected value="0">
-                                        Выберите размер
-                                    </option>
-                                    <option value="2200">
-                                        30х30х30
-                                    </option>
-                                    <option value="2700">
-                                        40х30х30
-                                    </option>
-                                    <option value="3200">
-                                        50х30х30
-                                    </option>
-                                    <option value="3800">
-                                        60х30х30
-                                    </option>
-                                    <option value="4400">
-                                        70х30х30
-                                    </option>
-                                    <option value="4900">
-                                        80х30х30
-                                    </option>
-                                </select>
-
-                            </div>
-                            <div class="box-constructor__item">
-                                <h2 class="box-constructor__subtitle">
-                                    2. Цвет кожи
-                                </h2>
-                                <div class="box-constructor__colors constructor-filler-view__skin constructor-filler-view__skin_romb-1-black">
-                                    <input value="чёрная кожа" name="box-color-skin" id="box-color-skin-1" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__black" for="box-color-skin-1"></label>
-                                    <input value="серая кожа" name="box-color-skin" id="box-color-skin-2" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__gray" for="box-color-skin-2"></label>
-                                    <input value="бежевая кожа" name="box-color-skin" id="box-color-skin-3" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__sand" for="box-color-skin-3"></label>
-                                    <input value="синяя кожа" name="box-color-skin" id="box-color-skin-4" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__blue" for="box-color-skin-4"></label>
-                                    <input value="красная кожа" name="box-color-skin" id="box-color-skin-5" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__red" for="box-color-skin-5"></label>
-                                    <input value="коричневая кожа" name="box-color-skin" id="box-color-skin-6" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__brown" for="box-color-skin-6"></label>
-                                </div>
-                            </div>
-                            <div class="box-constructor__item">
-                                <h2 class="box-constructor__subtitle">
-                                    3. Цвет строчки
-                                </h2>
-                                <div class="box-constructor__colors constructor-filler-view__skin constructor-filler-view__skin_romb-1-black">
-                                    <input value="чёрная строчка" name="box-color-skin-2" id="box-color-skin-2-1" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__black" for="box-color-skin-2-1"></label>
-                                    <input value="серая строчка" name="box-color-skin-2" id="box-color-skin-2-2" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__gray" for="box-color-skin-2-2"></label>
-                                    <input value="бежевая строчка" name="box-color-skin-2" id="box-color-skin-2-3" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__sand" for="box-color-skin-2-3"></label>
-                                    <input value="синяя строчка" name="box-color-skin-2" id="box-color-skin-2-4" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__blue" for="box-color-skin-2-4"></label>
-                                    <input value="красная строчка" name="box-color-skin-2" id="box-color-skin-2-5" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__red" for="box-color-skin-2-5"></label>
-                                    <input value="коричневая строчка" name="box-color-skin-2" id="box-color-skin-2-6" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__brown" for="box-color-skin-2-6"></label>
-                                </div>
-                            </div>
-                            <div class="box-constructor__item">
-                                <h2 class="box-constructor__subtitle">
-                                    4. Цвет окантовки
-                                </h2>
-                                <div class="box-constructor__colors constructor-filler-view__skin constructor-filler-view__skin_romb-1-black">
-                                    <input value="чёрная окантовка" name="box-color-skin-3" id="box-color-skin-3-1" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__black" for="box-color-skin-3-1"></label>
-                                    <input value="серая окантовка" name="box-color-skin-3" id="box-color-skin-3-2" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__gray" for="box-color-skin-3-2"></label>
-                                    <input value="бежевая окантовка" name="box-color-skin-3" id="box-color-skin-3-3" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__sand" for="box-color-skin-3-3"></label>
-                                    <input value="синяя окантовка" name="box-color-skin-3" id="box-color-skin-3-4" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__blue" for="box-color-skin-3-4"></label>
-                                    <input value="красная окантовка" name="box-color-skin-3" id="box-color-skin-3-5" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__red" for="box-color-skin-3-5"></label>
-                                    <input value="коричневая окантовка" name="box-color-skin-3" id="box-color-skin-3-6" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__brown" for="box-color-skin-3-6"></label>
-                                </div>
-                            </div>
-                            <div class="box-constructor-price">
-                                <div class="box-constructor-price__info">
-                                    Цена: <span class="box-constructor-price__sum">0</span>р.
-                                </div>
-                                <button class="constructor-footer__button">
-                                    купить
-                                </button>
-                            </div>
-                        </form>
+                    <div class="capes-constructor__item">
+                        <h2 class="box-constructor__subtitle">
+                            2.Цвет строчки
+                        </h2>
+                        <div class="box-constructor__colors constructor-filler-view__skin constructor-filler-view__skin_romb-1-black">
+                            <input value="бежевая нить" name="capes-color-thread" id="capes-color-thread-1" aria-label="" type="radio">
+                            <label class="constructor-filler-view__sand" for="capes-color-thread-1"></label>
+                            <input value="чёрная нить" name="capes-color-thread" id="capes-color-thread-2" aria-label="" type="radio">
+                            <label class="constructor-filler-view__black" for="capes-color-thread-2"></label>
+                            <input value="красная нить" name="capes-color-thread" id="capes-color-thread-3" aria-label="" type="radio">
+                            <label class="constructor-filler-view__red" for="capes-color-thread-3"></label>
+                            <input value="синяя нить" name="capes-color-thread" id="capes-color-thread-4" aria-label="" type="radio">
+                            <label class="constructor-filler-view__blue" for="capes-color-thread-4"></label>
+                            <input value="серая нить" name="capes-color-thread" id="capes-color-thread-5" aria-label="" type="radio">
+                            <label class="constructor-filler-view__gray" for="capes-color-thread-5"></label>
+                            <input value="коричневая нить" name="capes-color-thread" id="capes-color-thread-6" aria-label="" type="radio">
+                            <label class="constructor-filler-view__brown" for="capes-color-thread-6"></label>
+                        </div>
+                    </div>
+                    <div class="capes-constructor__item">
+                        <h2 class="box-constructor__subtitle">
+                            3. Цвет канта
+                        </h2>
+                        <div class="box-constructor__colors constructor-filler-view__skin constructor-filler-view__skin_romb-1-black">
+                            <input value="бежевый кант" name="capes-color-edging" id="capes-color-edging-1" aria-label="" type="radio">
+                            <label class="constructor-filler-view__sand" for="capes-color-edging-1"></label>
+                            <input value="чёрный кант" name="capes-color-edging" id="capes-color-edging-2" aria-label="" type="radio">
+                            <label class="constructor-filler-view__black" for="capes-color-edging-2"></label>
+                            <input value="красный кант" name="capes-color-edging" id="capes-color-edging-3" aria-label="" type="radio">
+                            <label class="constructor-filler-view__red" for="capes-color-edging-3"></label>
+                            <input value="синий кант" name="capes-color-edging" id="capes-color-edging-4" aria-label="" type="radio">
+                            <label class="constructor-filler-view__blue" for="capes-color-edging-4"></label>
+                            <input value="серый кант" name="capes-color-edging" id="capes-color-edging-5" aria-label="" type="radio">
+                            <label class="constructor-filler-view__gray" for="capes-color-edging-5"></label>
+                            <input value="коричневый кант" name="capes-color-edging" id="capes-color-edging-6" aria-label="" type="radio">
+                            <label class="constructor-filler-view__brown" for="capes-color-edging-6"></label>
+                        </div>
+                    </div>
+                    <div class="capes-choice">
+                        <input value="3500" name="capes-row" id="capes-row-1" aria-label="" type="radio" class="capes-choice__button">
+                        <label for="capes-row-1">Широкие накидки на 1 ряд сидений</label>
+                        <input value="3000" name="capes-row" id="capes-row-2" aria-label="" type="radio" class="capes-choice__button">
+                        <label for="capes-row-2">Узкие накидки на 1 ряд сидений</label>
+                    </div>
+                    <div class="box-constructor-price capes-constructor-price">
+                        <div class="box-constructor-price__info capes-constructor-price__info">
+                            Цена: <span class="box-constructor-price__sum">0</span>р.
+                        </div>
+                        <button class="constructor-footer__button">
+                            купить
+                        </button>
                     </div>
                 </div>
             </div>
