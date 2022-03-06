@@ -966,6 +966,10 @@ ul {
 .header {
   background: #181818;
   padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  z-index: 10;
 }
 .header__inner {
   display: flex;
@@ -1094,7 +1098,7 @@ ul {
     right: 0;
     z-index: 5;
     width: 50%;
-    min-height: 100vh;
+    min-height: 100%;
     transform: translateX(200%);
     transition: all 0.3s;
   }
@@ -1172,7 +1176,7 @@ ul {
   }
 }
 .constructor {
-  padding: 70px 0;
+  padding: 140px 0;
   background: #000;
   color: #fff;
 }
@@ -1643,10 +1647,10 @@ ul {
 }
 @media (max-width: 606px) {
   .constructor {
-    padding: 45px 0;
+    padding: 120px 0;
   }
   .constructor__title {
-    font-size: 24px;
+    font-size: 23px;
   }
   .constructor__subtitle {
     font-size: 20px;
