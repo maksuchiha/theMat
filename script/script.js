@@ -68,7 +68,6 @@ const appData = {
                 }
             })
         }
-        console.log(appData.imageNumber)
     },
     cleanFillerSkinColor: () => {
         document.querySelectorAll('.constructor-filler-view__skin').forEach(item => {
