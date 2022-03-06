@@ -16,15 +16,45 @@
                 <img src="./img/logo.png" alt="logo">
             </a>
             <div class="header__wr">
+                <a href="#" class="logo logo_mob header__logo">
+                    <img src="./img/logo.png" alt="logo">
+                </a>
                 <nav class="header-nav">
                     <ul class="header-nav__list">
-                        <li><a href="#" class="header__link">Товары</a></li>
+                        <li>
+                            <a href="#" class="header__link header__link_open-menu">Товары</a>
+                            <ul class="header-nav__menu">
+                                <li>
+                                    <a href="#" class="header__link">
+                                        3D коврики
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="header__link">
+                                        Боксы в багажник
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="header__link">
+                                        Подушки
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="header__link">
+                                        Накидки на сиденья
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <li><a href="#" class="header__link">О нас</a></li>
                         <li><a href="#" class="header__link">Галерея</a></li>
                         <li><a href="#" class="header__link">Контакты</a></li>
                     </ul>
                 </nav>
                 <div class="header-contacts">
+                    <span class="header-contacts__info">
+                        лучшее качество 3D ковриков в авто по адекватной цене
+                    </span>
                     <div class="header-social">
                         <a href="#" class="header-social__link">
                             <svg width="100" height="97" viewBox="0 0 100 97" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -94,19 +124,19 @@
                     </h2>
                     <div class="constructor-set__choice">
                         <input value="10000" name="choice" id="choice-1" aria-label="" type="radio">
-                        <label for="choice-1">
+                        <label class="choice-1" for="choice-1">
                             <img src="./img/choice/1.png" alt="choice-1">
                         </label>
                         <input value="7000" name="choice" id="choice-2" aria-label="" type="radio">
-                        <label for="choice-2">
+                        <label class="choice-2" for="choice-2">
                             <img src="./img/choice/2.png" alt="choice-2">
                         </label>
                         <input value="7000" name="choice" id="choice-3" aria-label="" type="radio">
-                        <label for="choice-3">
+                        <label class="choice-3" for="choice-3">
                             <img src="./img/choice/3.png" alt="choice-3">
                         </label>
                         <input value="3000" name="choice" id="choice-4" aria-label="" type="radio">
-                        <label for="choice-4">
+                        <label class="choice-4" for="choice-4">
                             <img src="./img/choice/4.png" alt="choice-4">
                         </label>
                     </div>
@@ -177,19 +207,19 @@
                                 </h3>
                                 <div class="constructor-filler-view__patterns">
                                     <input data-pattern="skin-color-selector-romb-1" value="1" name="pattern" id="pattern-1" aria-label="" type="radio">
-                                    <label for="pattern-1">
+                                    <label class="constructor-filler-view__label constructor-filler-view__label_1" for="pattern-1">
                                         <img src="./img/patterns/1.png" alt="pattern-1">
                                     </label>
                                     <input data-pattern="skin-color-selector-romb-2" value="2" name="pattern" id="pattern-2" aria-label="" type="radio">
-                                    <label for="pattern-2">
+                                    <label class="constructor-filler-view__label constructor-filler-view__label_2" for="pattern-2">
                                         <img src="./img/patterns/2.png" alt="pattern-2">
                                     </label>
                                     <input data-pattern="skin-color-selector-romb-3" value="3" name="pattern" id="pattern-3" aria-label="" type="radio">
-                                    <label for="pattern-3">
+                                    <label class="constructor-filler-view__label constructor-filler-view__label_3" for="pattern-3">
                                         <img src="./img/patterns/3.png" alt="pattern-3">
                                     </label>
                                     <input data-pattern="skin-color-selector-square" value="4" name="pattern" id="pattern-4" aria-label="" type="radio">
-                                    <label for="pattern-4">
+                                    <label class="constructor-filler-view__label constructor-filler-view__label_4" for="pattern-4">
                                         <img src="./img/patterns/4.png" alt="pattern-4">
                                     </label>
                                 </div>
@@ -267,6 +297,16 @@
                                     <input value="7" name="skin-color-romb" id="skin-color-romb-sand-1" aria-label="" type="radio">
                                     <label class="constructor-filler-view__sand" for="skin-color-romb-sand-1"></label>
                                 </div>
+                                <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-2-black">
+                                    <input value="1" name="skin-color-romb" id="skin-color-romb-black-2-1" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__black" for="skin-color-romb-black-2-1"></label>
+                                    <input value="2" name="skin-color-romb" id="skin-color-romb-black-2-2" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__white" for="skin-color-romb-black-2-2"></label>
+                                    <input value="3" name="skin-color-romb" id="skin-color-romb-black-2-3" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__gold" for="skin-color-romb-black-2-3"></label>
+                                    <input value="8" name="skin-color-romb" id="skin-color-romb-black-2-8" aria-label="" type="radio">
+                                    <label class="constructor-filler-view__red" for="skin-color-romb-black-2-8"></label>
+                                </div>
                                 <div class="constructor-filler-view__skin constructor-filler-view__skin_romb-2-gray">
                                     <input value="1" name="skin-color-romb" id="skin-color-romb-gray-2-1" aria-label="" type="radio">
                                     <label class="constructor-filler-view__black" for="skin-color-romb-gray-2-1"></label>
@@ -292,8 +332,6 @@
                                     <label class="constructor-filler-view__white" for="skin-color-square-black-2"></label>
                                     <input value="4" name="skin-color-romb" id="skin-color-square-black-3" aria-label="" type="radio">
                                     <label class="constructor-filler-view__blue" for="skin-color-square-black-3"></label>
-                                    <input value="8" name="skin-color-romb" id="skin-color-square-black-4" aria-label="" type="radio">
-                                    <label class="constructor-filler-view__red" for="skin-color-square-black-4"></label>
                                 </div>
                             </div>
                             <div class="constructor-filler-view__item">

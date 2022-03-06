@@ -33,7 +33,7 @@ const appData = {
     },
     addFillerPrice: () => {
         fillerChoice.querySelectorAll('input').forEach(item => {
-            if (item.checked) {
+            if (item.getAttribute('id') !== 'skin' && item.checked) {
                 if (appData.setPrice === 10000) {
                     appData.setPrice = 13000
                 } else if (appData.setPrice === 7000) {
@@ -68,6 +68,7 @@ const appData = {
                 }
             })
         }
+        console.log(appData.imageNumber)
     },
     cleanFillerSkinColor: () => {
         document.querySelectorAll('.constructor-filler-view__skin').forEach(item => {
@@ -80,8 +81,8 @@ const appData = {
         colorsActive.onclick = (e) => {
             if (e.target.checked) {
                 appData.colorStr = `${e.target.value}`
+                appData.getImageNumber()
             }
-            appData.getImageNumber()
         }
     },
     checkSkinColor: (select) => {
@@ -89,10 +90,10 @@ const appData = {
             appData.skinColor = `${e.target.value}`
             if (e.target.value !== 'Цвета') {
                 appData.checkColorStr()
+                appData.getImageNumber()
             } else {
                 e.target.value = 0
             }
-            appData.getImageNumber()
         })
     },
     setColorStr: (getId) => {
@@ -137,7 +138,7 @@ const appData = {
             getId.addEventListener('change', (e) => {
                 if (e.target.value === '1') {
                     appData.cleanFillerSkinColor()
-                    document.querySelector('.constructor-filler-view__skin_romb-1-black')
+                    document.querySelector('.constructor-filler-view__skin_romb-2-black')
                         .classList.add('active_flex')
                 } else if (e.target.value === '5') {
                     appData.cleanFillerSkinColor()
@@ -199,10 +200,10 @@ const appData = {
             if (e.target.closest('input')) {
                 if (e.target.checked) {
                     appData.setPrice = +e.target.value
+                    appData.addFillerPrice()
                 }
+                appData.getFullPrice()
             }
-            appData.addFillerPrice()
-            appData.getFullPrice()
         })
         constructorOther.addEventListener('click', (e) => {
             if (e.target.closest('input')) {
@@ -211,8 +212,8 @@ const appData = {
                 } else {
                     appData.otherServices -= +e.target.value
                 }
+                appData.getFullPrice()
             }
-            appData.getFullPrice()
         })
         footerCheckbox.addEventListener('click', (e) => {
             if (e.target.closest('input')) {
@@ -221,8 +222,8 @@ const appData = {
                 } else {
                     appData.accessories -= +e.target.value
                 }
+                appData.getFullPrice()
             }
-            appData.getFullPrice()
         })
         fillerChoice.onclick = (e) => {
             if (e.target.closest('input')) {
@@ -253,33 +254,33 @@ const appData = {
 
                     getId.classList.add('active')
                     appData.setColorStr(getId)
+                    appData.getImageNumber()
                 }
             }
-            appData.getImageNumber()
         }
         fillerColors.forEach(item => {
             item.onclick = (e) => {
                 if (e.target.checked) {
                     appData.colorFiller = `${e.target.value}`
+                    appData.getImageNumber()
                 }
-                appData.getImageNumber()
             }
         })
         endingFillerColors.addEventListener('change', (e) => {
             if (e.target.value !== 'Наполнителя') {
                 appData.colorEdgingFiller = `${e.target.value}`
+                appData.getImageNumber()
             } else {
                 appData.colorEdgingFiller = `0`
             }
-            appData.getImageNumber()
         })
         endingSkinColors.addEventListener('change', (e) => {
             if (e.target.value !== 'Кожи') {
                 appData.colorEdgingSkin = `${e.target.value}`
+                appData.getImageNumber()
             } else {
                 appData.colorEdgingSkin = `0`
             }
-            appData.getImageNumber()
         })
     },
 }

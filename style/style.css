@@ -1,19 +1,4 @@
-@font-face {
-  font-family: "Styrene A Web";
-  src: url("./../fonts/StyreneAWeb/StyreneAWeb-Regular.eot");
-  src: local("Styrene A Web Regular"), local("StyreneAWeb-Regular"), url("./../fonts/StyreneAWeb/StyreneAWeb-Regular.eot?#iefix") format("embedded-opentype"), url("./../fonts/StyreneAWeb/StyreneAWeb-Regular.woff2") format("woff2"), url("./../fonts/StyreneAWeb/StyreneAWeb-Regular.woff") format("woff"), url("./../fonts/StyreneAWeb/StyreneAWeb-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Styrene A Web";
-  src: url("./../fonts/StyreneAWeb/StyreneAWeb-Light.eot");
-  src: local("Styrene A Web Light"), local("StyreneAWeb-Light"), url("./../fonts/StyreneAWeb/StyreneAWeb-Light.eot?#iefix") format("embedded-opentype"), url("./../fonts/StyreneAWeb/StyreneAWeb-Light.woff2") format("woff2"), url("./../fonts/StyreneAWeb/StyreneAWeb-Light.woff") format("woff"), url("./../fonts/StyreneAWeb/StyreneAWeb-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
+@charset "UTF-8";
 @font-face {
   font-family: "Montserrat";
   src: url("./../fonts/Montserrat/Montserrat-SemiBold.eot");
@@ -888,7 +873,7 @@ html {
 
 body {
   min-height: 100%;
-  font-family: "Styrene A Web", sans-serif;
+  font-family: "Montserrat", sans-serif;
   min-width: 320px;
 }
 
@@ -958,10 +943,19 @@ ul {
 .logo img {
   width: 100%;
 }
+.logo_mob {
+  display: none;
+}
 
 @media (max-width: 798px) {
   .logo {
     flex: 0 0 20%;
+  }
+  .logo_mob {
+    display: flex;
+    width: 120px;
+    flex: 0 0 10%;
+    margin-bottom: 35px;
   }
 }
 @media (max-width: 606px) {
@@ -991,8 +985,30 @@ ul {
 .header-nav__list {
   display: flex;
 }
+.header-nav__list li {
+  position: relative;
+}
 .header-nav__list li:not(:last-of-type) {
   margin-right: 35px;
+}
+.header-nav__menu {
+  display: none;
+  position: absolute;
+  background: #181818;
+  padding: 15px;
+  width: 210px;
+  z-index: 5;
+  top: 15px;
+}
+.header-nav__menu:hover {
+  display: block;
+}
+.header-nav__menu li:not(:last-of-type) {
+  margin: 0;
+}
+.header-nav__menu li a {
+  display: block;
+  padding: 15px 0;
 }
 .header__link {
   font-family: Montserrat, sans-serif;
@@ -1002,11 +1018,17 @@ ul {
 .header__link:hover {
   color: red;
 }
+.header__link_open-menu:hover + .header-nav__menu {
+  display: block;
+}
 .header-contacts {
   display: flex;
   align-items: center;
   flex: 0 0 50%;
   justify-content: center;
+}
+.header-contacts__info {
+  display: none;
 }
 .header__phone {
   margin-left: 30px;
@@ -1081,8 +1103,10 @@ ul {
   }
   .header-nav {
     flex: 0 0 100%;
+    width: 100%;
   }
   .header-nav__list {
+    width: 100%;
     flex-direction: column;
   }
   .header-nav__list li {
@@ -1091,15 +1115,33 @@ ul {
   .header-nav__list li:not(:last-of-type) {
     margin-right: 0;
   }
+  .header-nav__menu {
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+  }
+  .header-nav__menu a {
+    font-size: 12px;
+  }
   .header__link {
     font-size: 18px;
   }
   .header-contacts {
+    margin-top: auto;
     flex: 0 0 100%;
     flex-direction: column-reverse;
     align-items: start;
   }
+  .header-contacts__info {
+    color: #fff;
+    margin-bottom: 15px;
+    display: block;
+  }
+  .header-social {
+    order: -2;
+  }
   .header__phone {
+    order: -1;
     margin-left: 0;
     margin-bottom: 15px;
   }
@@ -1168,14 +1210,54 @@ ul {
 .constructor-set__choice #choice-1:checked ~ label[for=choice-1] {
   border: 2px solid red;
 }
+.constructor-set__choice .choice-1:hover:after {
+  content: "Полный комплект на весь салон";
+  display: block;
+  width: 200px;
+  background: #212121;
+  position: absolute;
+  padding: 10px;
+  border-radius: 15px;
+  z-index: 3;
+}
 .constructor-set__choice #choice-2:checked ~ label[for=choice-2] {
   border: 2px solid red;
+}
+.constructor-set__choice .choice-2:hover:after {
+  content: "задние коврики";
+  display: block;
+  width: 200px;
+  background: #212121;
+  position: absolute;
+  padding: 10px;
+  border-radius: 15px;
+  z-index: 3;
 }
 .constructor-set__choice #choice-3:checked ~ label[for=choice-3] {
   border: 2px solid red;
 }
+.constructor-set__choice .choice-3:hover:after {
+  content: "передние коврики";
+  display: block;
+  width: 200px;
+  background: #212121;
+  position: absolute;
+  padding: 10px;
+  border-radius: 15px;
+  z-index: 3;
+}
 .constructor-set__choice #choice-4:checked ~ label[for=choice-4] {
   border: 2px solid red;
+}
+.constructor-set__choice .choice-4:hover:after {
+  content: "Коврик водителя";
+  display: block;
+  width: 200px;
+  background: #212121;
+  position: absolute;
+  padding: 10px;
+  border-radius: 15px;
+  z-index: 3;
 }
 .constructor-set__add {
   display: flex;
@@ -1263,6 +1345,27 @@ ul {
   background: #212121;
   border-radius: 20px;
   width: 40%;
+}
+.constructor-filler-view__label:hover:after {
+  display: block;
+  width: 200px;
+  background: #212121;
+  position: absolute;
+  padding: 10px;
+  border-radius: 15px;
+  z-index: 3;
+}
+.constructor-filler-view__label_1:hover:after {
+  content: "ромб 1 строчка";
+}
+.constructor-filler-view__label_2:hover:after {
+  content: "ромб 2 строчки";
+}
+.constructor-filler-view__label_3:hover:after {
+  content: "ромб 3 строчки";
+}
+.constructor-filler-view__label_4:hover:after {
+  content: "квадрат 2 строчки";
 }
 .constructor-filler-view__item:not(:last-of-type) {
   margin-bottom: 25px;
@@ -1558,6 +1661,9 @@ ul {
   .constructor-set__choice label:not(:last-of-type) {
     margin: 15px;
   }
+  .constructor-set__choice label:after {
+    display: none !important;
+  }
   .constructor-set__one label {
     font-size: 13px;
   }
@@ -1611,6 +1717,14 @@ ul {
   }
   .constructor-footer__price {
     width: 100%;
+  }
+}
+@media (max-width: 375px) {
+  .constructor-filler-view__label_3:hover:after {
+    right: 0;
+  }
+  .constructor-filler-view__label_4:hover:after {
+    right: 0;
   }
 }
 .help {
