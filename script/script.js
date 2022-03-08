@@ -12,6 +12,7 @@ const patterns = document.querySelector('.constructor-filler-view__patterns')
 const endingFillerColors = document.getElementById('edging-filler-color')
 const endingSkinColors = document.getElementById('edging-color')
 const image = document.querySelector('.constructor-filler__img > img')
+const fillerItem = document.querySelectorAll('.constructor-filler-view__item')
 
 
 const appData = {
@@ -229,6 +230,9 @@ const appData = {
                 if (e.target.checked) {
                     appData.addFillerPrice()
                     appData.typeCarped = `${e.target.value}`
+                    fillerItem.forEach(item => {
+                        item.classList.remove('constructor-filler-view__item_none')
+                    })
                 }
                 if (e.target.getAttribute('id') === 'eva') {
                     fillerColor.classList.remove('active_flex')
