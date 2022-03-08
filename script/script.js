@@ -13,6 +13,8 @@ const endingFillerColors = document.getElementById('edging-filler-color')
 const endingSkinColors = document.getElementById('edging-color')
 const image = document.querySelector('.constructor-filler__img > img')
 const fillerItem = document.querySelectorAll('.constructor-filler-view__item')
+const error = document.querySelector('.constructor__error')
+const addCart = document.querySelector('.constructor-footer__button')
 
 
 const appData = {
@@ -28,9 +30,32 @@ const appData = {
     colorEdgingFiller: '0',
     colorEdgingSkin: '0',
     imageNumber: '0',
+    numberRugs: '',
+    checkExists: (imageUrl, callback) => {
+        const img = new Image();
+
+        img.onerror = function() {
+            callback(false);
+        };
+
+        img.onload = function() {
+            callback(true);
+        };
+
+        img.src = imageUrl;
+    },
     getFullPrice: () => {
         appData.fullPrice = appData.setPrice + appData.otherServices + appData.accessories
         outputSum.textContent = appData.fullPrice
+        appData.checkExists(`./img/rugs/${appData.imageNumber}.jpg`, (exits) => {
+            if (exits && appData.numberRugs !== '') {
+                addCart.classList.add('constructor-footer__button_active')
+                error.classList.remove('constructor__error_active')
+            } else {
+                addCart.classList.remove('constructor-footer__button_active')
+                error.classList.add('constructor__error_active')
+            }
+        })
     },
     addFillerPrice: () => {
         fillerChoice.querySelectorAll('input').forEach(item => {
@@ -45,27 +70,20 @@ const appData = {
             }
         })
     },
-    checkExists: (imageUrl, callback) => {
-        const img = new Image();
-
-        img.onerror = function() {
-            callback(false);
-        };
-
-        img.onload = function() {
-            callback(true);
-        };
-
-        img.src = imageUrl;
-    },
     getImageNumber: () => {
         appData.imageNumber = appData.typeCarped + appData.skinColor + appData.typePatterns + appData.colorStr + appData.colorFiller + appData.colorEdgingFiller + appData.colorEdgingSkin
         if (appData.imageNumber.length === 7) {
             appData.checkExists(`./img/rugs/${appData.imageNumber}.jpg`, (exits) => {
                 if (exits) {
                     image.setAttribute('src', `./img/rugs/${appData.imageNumber}.jpg`)
+                    if (appData.numberRugs !== '') {
+                        addCart.classList.add('constructor-footer__button_active')
+                        error.classList.remove('constructor__error_active')
+                    }
                 } else {
                     image.setAttribute('src', `./img/products/product.png`)
+                    error.classList.add('constructor__error_active')
+                    addCart.classList.remove('constructor-footer__button_active')
                 }
             })
         }
@@ -201,6 +219,7 @@ const appData = {
                 if (e.target.checked) {
                     appData.setPrice = +e.target.value
                     appData.addFillerPrice()
+                    appData.numberRugs = `${e.target.getAttribute('aria-label')}`
                 }
                 appData.getFullPrice()
             }

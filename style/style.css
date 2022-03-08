@@ -1582,6 +1582,10 @@ ul {
   max-width: 40%;
   width: 100%;
   font-family: Montserrat, sans-serif;
+  display: none;
+}
+.constructor-footer__button_active {
+  display: block;
 }
 .constructor-select {
   display: block;
@@ -1596,6 +1600,13 @@ ul {
 }
 .constructor select[name=skin-color-selector] {
   display: none;
+}
+.constructor__error {
+  display: none;
+  color: red;
+}
+.constructor__error_active {
+  display: block;
 }
 
 @media (max-width: 1230px) {
