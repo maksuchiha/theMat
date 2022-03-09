@@ -85,12 +85,14 @@ const addToCart = () => {
 
         localStorage.setItem('cart', JSON.stringify(getCart))
         const keys = Object.values(getCart)
-        keys.forEach(item => {
-            console.log(item)
-        })
+        createItem(keys)
     }
 
     cartBtn.addEventListener('click', () => {
+        if (JSON.parse(localStorage.getItem('cart'))) {
+            const keys = Object.values(JSON.parse(localStorage.getItem('cart')))
+            createItem(keys)
+        }
         overlayCart.classList.add('overlay_active')
     })
 
