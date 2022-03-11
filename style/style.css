@@ -911,6 +911,10 @@ ul {
   display: flex !important;
 }
 
+.display_none {
+  display: none !important;
+}
+
 .main {
   min-height: 100vh;
 }

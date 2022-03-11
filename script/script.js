@@ -12,7 +12,6 @@ const patterns = document.querySelector('.constructor-filler-view__patterns')
 const endingFillerColors = document.getElementById('edging-filler-color')
 const endingSkinColors = document.getElementById('edging-color')
 const image = document.querySelector('.constructor-filler__img > img')
-const fillerItem = document.querySelectorAll('.constructor-filler-view__item')
 const error = document.querySelector('.constructor__error')
 const addCart = document.querySelector('.constructor-footer__button')
 
@@ -31,6 +30,8 @@ const appData = {
     colorEdgingSkin: '0',
     imageNumber: '0',
     numberRugs: '',
+    skinColorName: '',
+    colorStrName: '',
     checkExists: (imageUrl, callback) => {
         const img = new Image();
 
@@ -99,6 +100,7 @@ const appData = {
         colorsActive.onclick = (e) => {
             if (e.target.checked) {
                 appData.colorStr = `${e.target.value}`
+                appData.colorStrName = `${e.target.getAttribute('aria-label')}`
                 appData.getImageNumber()
             }
         }
@@ -106,6 +108,7 @@ const appData = {
     checkSkinColor: (select) => {
         select.addEventListener('change', (e) => {
             appData.skinColor = `${e.target.value}`
+            appData.skinColorName = `${e.target.options[e.target.selectedIndex].getAttribute('aria-label')}`
             if (e.target.value !== 'Цвета') {
                 appData.checkColorStr()
                 appData.getImageNumber()
@@ -249,8 +252,9 @@ const appData = {
                 if (e.target.checked) {
                     appData.addFillerPrice()
                     appData.typeCarped = `${e.target.value}`
-                    fillerItem.forEach(item => {
-                        item.classList.remove('constructor-filler-view__item_none')
+                    document.querySelectorAll('.display_none')
+                        .forEach(item => {
+                        item.classList.remove('display_none')
                     })
                 }
                 if (e.target.getAttribute('id') === 'eva') {
