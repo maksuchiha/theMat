@@ -22,7 +22,7 @@ const addToCart = () => {
                                     ${item.name}
                                 </h3>
                                 <span class="cart__color">
-                                    Цвет: ${item.color} строчка: ${item.colorStr}
+                                    Цвет: ${item.color}<br>Строчка: ${item.colorStr}
                                 </span>
                                 <span class="cart__id">
                                     id: <span class="cart__id_num">${item.id}</span>
