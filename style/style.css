@@ -2135,6 +2135,21 @@ ul {
   color: #000;
   text-align: center;
 }
+.capes__button {
+  background: #CD1829;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  max-width: 40%;
+  width: 100%;
+  font-family: Montserrat, sans-serif;
+  display: none;
+}
+.capes__button_active {
+  display: block;
+}
 
 @media (max-width: 1230px) {
   .capes-constructor__settings {
