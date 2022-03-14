@@ -1,32 +1,52 @@
 'use strict'
 
+const boxCart = () => {
+    const skinColorItem = document.querySelector('.box-constructor__item_skin')
+    const strColorItem = document.querySelector('.box-constructor__item_str')
+    const endingColorItem = document.querySelector('.box-constructor__item_edging')
+    const buttonBuy = document.querySelector('.box-constructor-price__button')
+    const errorMess = document.querySelector('.constructor__error')
+    const addToCartBtn = document.querySelector('.constructor-footer__button')
+    const overlayCart = document.querySelector('.overlay')
+    const cart = document.querySelector('.cart')
+    const cartBtn = document.querySelector('.header__cart')
+    const cartInfo = cart.querySelector('.cart__wr')
+    const cartClose = cart.querySelector('.cart__close')
 
-const addToCartBtn = document.querySelector('.constructor-footer__button')
-const overlayCart = document.querySelector('.overlay')
-const cart = document.querySelector('.cart')
-const cartBtn = document.querySelector('.header__cart')
-const cartInfo = cart.querySelector('.cart__wr')
+    const settings = {
+        skinColor: '',
+        strColor: '',
+        endingColor: '',
+        size: '',
+        price: ''
+    }
 
+    const validate = () => {
+        if ((settings.skinColor && settings.strColor && settings.endingColor !== '')
+            && (sumOut.textContent !== '0')) {
+            errorMess.classList.remove('constructor__error_active')
+            buttonBuy.classList.add('box-constructor-price__button_active')
+        } else {
+            buttonBuy.classList.remove('box-constructor-price__button_active')
+            errorMess.classList.add('constructor__error_active')
+        }
+    }
 
-const addToCartProduct = () => {
-    const createItem = (data) => {
+    const createItemBox = (data) => {
         cartInfo.innerHTML = ''
         data.forEach(item => {
             const createItem = document.createElement('div')
             createItem.classList.add('cart__item')
             createItem.innerHTML = `
-                        <div class="cart__img">
-                            <img src="./img/rugs/${item.id}.jpg" alt="image">
-                        </div>
                         <div class="cart__info">
                             <h3 class="cart__name">
-                                ${item.name}
+                                ${item.size}
                             </h3>
-                            <span class="cart__color">
-                                Цвет: ${item.color}<br>Строчка: ${item.colorStr}
+                            <span style="margin: 0;" class="cart__color">
+                                ${item.skinColor}<br>${item.strColor}
                             </span>
                             <span class="cart__id">
-                                id: <span class="cart__id_num">${item.id}</span>
+                                <span class="cart__id_num">${item.endingColor}</span>
                             </span>
                         </div>
                         <div class="cart-counter">
@@ -52,42 +72,39 @@ const addToCartProduct = () => {
     }
 
     const addProductToCart = () => {
-        let getCart = JSON.parse(localStorage.getItem('cart'))
+        let getCart = JSON.parse(localStorage.getItem('box-cart'))
 
         if (getCart) {
-            const idProduct = appData.imageNumber
-            const variantRugs = appData.numberRugs
+            const idProduct = settings.size
             const clickedGoods = Object.keys(getCart).find(good => good === idProduct)
-            const variantGoods = Object.keys(getCart).find(good => good === variantRugs)
 
-
-            if (clickedGoods && variantGoods) {
+            if (clickedGoods) {
                 getCart[idProduct]['count'] += 1
             } else {
-                getCart[appData.imageNumber] = {
+                getCart[idProduct] = {
                     count: 1,
-                    id: appData.imageNumber,
-                    name: appData.numberRugs,
-                    price: appData.fullPrice,
-                    color: appData.skinColorName,
-                    colorStr: appData.colorStrName
+                    skinColor: settings.skinColor,
+                    strColor: settings.strColor,
+                    endingColor: settings.endingColor,
+                    size: settings.size,
+                    price: settings.price
                 }
             }
         } else {
             getCart = {
-                [appData.imageNumber] : {
+                [settings.size] : {
                     count: 1,
-                    id: appData.imageNumber,
-                    name: appData.numberRugs,
-                    price: appData.fullPrice,
-                    color: appData.skinColorName,
-                    colorStr: appData.colorStrName
+                    skinColor: settings.skinColor,
+                    strColor: settings.strColor,
+                    endingColor: settings.endingColor,
+                    size: settings.size,
+                    price: settings.price,
                 }
             }
         }
 
-        localStorage.setItem('cart', JSON.stringify(getCart))
-        createItem(Object.values(getCart))
+        localStorage.setItem('box-cart', JSON.stringify(getCart))
+        createItemBox(Object.values(getCart))
     }
 
     cart.addEventListener('click', (e) => {
@@ -97,20 +114,20 @@ const addToCartProduct = () => {
         }
 
         if (e.target.closest('.cart__item')) {
-            const cartID = e.target.closest('.cart__item').querySelector('.cart__id_num').textContent
+            const cartID = e.target.closest('.cart__item').querySelector('.cart__name').textContent.trim()
             if (e.target.closest('.cart-counter__btn_plus')) {
-                const getCart = JSON.parse(localStorage.getItem('cart'))
+                const getCart = JSON.parse(localStorage.getItem('box-cart'))
 
                 const clickedGoods = Object.keys(getCart).find(good => good === cartID)
 
                 if (clickedGoods) {
                     getCart[cartID]['count'] += 1
                 }
-                localStorage.setItem('cart', JSON.stringify(getCart))
-                createItem(Object.values(getCart))
+                localStorage.setItem('box-cart', JSON.stringify(getCart))
+                createItemBox(Object.values(getCart))
             }
             if (e.target.closest('.cart-counter__btn_minus')) {
-                const getCart = JSON.parse(localStorage.getItem('cart'))
+                const getCart = JSON.parse(localStorage.getItem('box-cart'))
 
                 const clickedGoods = Object.keys(getCart).find(good => good === cartID)
 
@@ -119,34 +136,68 @@ const addToCartProduct = () => {
                 } else {
                     delete getCart[cartID]
                 }
-                localStorage.setItem('cart', JSON.stringify(getCart))
-                createItem(Object.values(getCart))
+                localStorage.setItem('box-cart', JSON.stringify(getCart))
+                createItemBox(Object.values(getCart))
             }
             if (e.target.closest('.cart__del')) {
-                const getCart = JSON.parse(localStorage.getItem('cart'))
+                const getCart = JSON.parse(localStorage.getItem('box-cart'))
 
                 const clickedGoods = Object.keys(getCart).find(good => good === cartID)
 
                 if (clickedGoods) {
                     delete getCart[cartID]
                 }
-                localStorage.setItem('cart', JSON.stringify(getCart))
-                createItem(Object.values(getCart))
+                localStorage.setItem('box-cart', JSON.stringify(getCart))
+                createItemBox(Object.values(getCart))
             }
         }
     })
 
+    skinColorItem.onclick = ((e) => {
+        if (e.target.checked) {
+            settings.skinColor = e.target.value
+            validate()
+        }
+    })
+
+    strColorItem.onclick = ((e) => {
+        if (e.target.checked) {
+            settings.strColor = e.target.value
+            validate()
+        }
+    })
+
+    endingColorItem.onclick = ((e) => {
+        if (e.target.checked) {
+            settings.endingColor = e.target.value
+            validate()
+        }
+    })
+
+    selects.forEach(item => {
+        item.addEventListener('change', (e) => {
+            validate()
+            settings.size = e.target.options[e.target.selectedIndex].getAttribute('aria-label')
+            settings.price = e.target.value
+        })
+    })
+
     cartBtn.addEventListener('click', () => {
         if (JSON.parse(localStorage.getItem('cart'))) {
-            const keys = Object.values(JSON.parse(localStorage.getItem('cart')))
-            createItem(keys)
+            const keys = Object.values(JSON.parse(localStorage.getItem('box-cart')))
+            createItemBox(keys)
         }
         overlayCart.classList.add('overlay_active')
     })
 
-    addToCartBtn.addEventListener('click', () => {
+    cartClose.addEventListener('click', () => {
+        overlayCart.classList.remove('overlay_active')
+    })
+
+    buttonBuy.addEventListener('click', (e) => {
+        e.preventDefault()
         addProductToCart()
     })
 }
 
-addToCartProduct()
+boxCart()

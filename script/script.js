@@ -312,3 +312,34 @@ const appData = {
 }
 
 appData.init()
+
+const swiper = new Swiper('.advertising-slider', {
+    loop: true,
+
+    navigation: {
+        nextEl: '.box-constructor-slider__button_right',
+        prevEl: '.box-constructor-slider__button_left',
+    },
+
+    pagination: {
+        el: ".advertising-slider-pagination",
+    },
+})
+
+const accordion = () => {
+    const accordionItem = document.querySelector('.accordion-item')
+
+    accordionItem.addEventListener('click', (e) => {
+        if (e.target.closest('li') && !e.target.closest('li').classList.contains('active')) {
+            e.target.closest('li').classList.add('active')
+            e.target.closest('li').querySelector('.accordion-item__ask').style.display = 'block'
+            e.target.closest('li').querySelector('.accordion-item__plus > span:last-of-type').style.transform = 'rotate(0)'
+        } else {
+            e.target.closest('li').classList.remove('active')
+            e.target.closest('li').querySelector('.accordion-item__ask').style.display = ''
+            e.target.closest('li').querySelector('.accordion-item__plus > span:last-of-type').style.transform = ''
+        }
+    })
+}
+
+accordion()
