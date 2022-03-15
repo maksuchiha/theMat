@@ -1427,6 +1427,10 @@ ul {
 .constructor-filler-view__skin label:not(:last-of-type) {
   margin-right: 15px;
 }
+.constructor-filler-view__skin label img {
+  width: 100%;
+  height: 100%;
+}
 .constructor-filler-view__fillers {
   display: none;
 }
@@ -1449,6 +1453,10 @@ ul {
 .constructor-filler-view__fillers label:not(:last-of-type) {
   margin-right: 15px;
 }
+.constructor-filler-view__fillers label img {
+  width: 100%;
+  height: 100%;
+}
 .constructor-filler-view__edging {
   display: flex;
 }
@@ -1467,6 +1475,10 @@ ul {
 }
 .constructor-filler-view__edging label:not(:last-of-type) {
   margin-right: 15px;
+}
+.constructor-filler-view__edging label img {
+  width: 100%;
+  height: 100%;
 }
 .constructor-filler-view__filler {
   display: flex;
