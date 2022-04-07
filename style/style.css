@@ -1884,7 +1884,7 @@ ul {
 }
 .box-constructor__settings {
   padding: 40px 20px;
-  background: rgba(0, 0, 0, 0.8);
+  background: #212121;
   border: 1px solid #C3C3C3;
   border-radius: 0 0 15px 15px;
 }
@@ -1920,9 +1920,6 @@ ul {
 }
 .box-constructor__colors {
   display: flex;
-}
-.box-constructor__colors label {
-  border: 1px solid #fff;
 }
 .box-constructor-price {
   display: flex;
@@ -2118,7 +2115,7 @@ ul {
 }
 .capes-constructor__settings {
   padding: 25px 25px 50px 25px;
-  background: #191919;
+  background: #212121;
   width: 45%;
   border-radius: 15px;
   border: 1px solid #C3C3C3;
