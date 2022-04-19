@@ -25,6 +25,12 @@ const addToCartProduct = () => {
                             <span class="cart__color">
                                 Цвет: ${item.color}<br>Строчка: ${item.colorStr}
                             </span>
+                            <div class="cart__color">
+                                <div>${item.addOptions.row}</div>
+                                <div>${item.addOptions.trunk}</div>
+                                <div>${item.addOptions.foot}</div>
+                                <div>${item.addOptions.nameplate}</div>
+                            </div>
                             <span class="cart__id">
                                 id: <span class="cart__id_num">${item.id}</span>
                             </span>
@@ -70,7 +76,8 @@ const addToCartProduct = () => {
                     name: appData.numberRugs,
                     price: appData.fullPrice,
                     color: appData.skinColorName,
-                    colorStr: appData.colorStrName
+                    colorStr: appData.colorStrName,
+                    addOptions: appData.otherServiceName
                 }
             }
         } else {
@@ -81,7 +88,8 @@ const addToCartProduct = () => {
                     name: appData.numberRugs,
                     price: appData.fullPrice,
                     color: appData.skinColorName,
-                    colorStr: appData.colorStrName
+                    colorStr: appData.colorStrName,
+                    addOptions: appData.otherServiceName
                 }
             }
         }

@@ -32,6 +32,12 @@ const appData = {
     numberRugs: '',
     skinColorName: '',
     colorStrName: '',
+    otherServiceName: {
+        row: '',
+        trunk: '',
+        foot: '',
+        nameplate: ''
+    },
     checkExists: (imageUrl, callback) => {
         const img = new Image();
 
@@ -113,7 +119,7 @@ const appData = {
                 appData.checkColorStr()
                 appData.getImageNumber()
             } else {
-                e.target.value = 0
+                e.target.value = 'Цвета'
             }
         })
     },
@@ -230,18 +236,39 @@ const appData = {
         constructorOther.addEventListener('click', (e) => {
             if (e.target.closest('input')) {
                 if (e.target.checked) {
+                    if (e.target.closest('#row')) {
+                        appData.otherServiceName['row'] = e.target.getAttribute('aria-label')
+                    } else if (e.target.closest('#trunk')) {
+                        appData.otherServiceName['trunk'] = e.target.getAttribute('aria-label')
+                    }
                     appData.otherServices += +e.target.value
                 } else {
+                    if (e.target.closest('#row')) {
+                        appData.otherServiceName['row'] = ''
+                    } else if (e.target.closest('#trunk')) {
+                        appData.otherServiceName['trunk'] = ''
+                    }
                     appData.otherServices -= +e.target.value
                 }
                 appData.getFullPrice()
+
             }
         })
         footerCheckbox.addEventListener('click', (e) => {
             if (e.target.closest('input')) {
                 if (e.target.checked) {
+                    if (e.target.closest('#for-foot')) {
+                        appData.otherServiceName['foot'] = e.target.getAttribute('aria-label')
+                    } else if (e.target.closest('#nameplate')) {
+                        appData.otherServiceName['nameplate'] = e.target.getAttribute('aria-label')
+                    }
                     appData.accessories += +e.target.value
                 } else {
+                    if (e.target.closest('#for-foot')) {
+                        appData.otherServiceName['foot'] = ''
+                    } else if (e.target.closest('#nameplate')) {
+                        appData.otherServiceName['nameplate'] = ''
+                    }
                     appData.accessories -= +e.target.value
                 }
                 appData.getFullPrice()
